@@ -35,7 +35,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
 Handler = MyHandler
 
 try:
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    with socketserver.TCPServer(("dicom.azurewebsites.net", PORT), Handler) as httpd:
         print(f"Starting http://0.0.0.0")
         httpd.serve_forever()
 except KeyboardInterrupt:
