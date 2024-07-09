@@ -1,0 +1,27 @@
+asgiref==3.8.1
+blinker==1.8.2
+certifi==2024.7.4
+charset-normalizer==3.3.2
+click==8.1.7
+dicom2jpg==0.1.10
+-e git+https://github.com/django/django.git@f302343380c77e1eb5dab3b64dd70895a95926ca#egg=Django
+djangorestframework==3.15.2
+Flask==3.0.3
+idna==3.7
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+numpy==2.0.0
+opencv-python==4.10.0.84
+pillow==10.4.0
+pydicom==2.4.4
+pylibjpeg==2.0.1
+pylibjpeg-libjpeg==2.2.0
+pylibjpeg-openjpeg==2.3.0
+pypng==0.20220715.0
+requests==2.32.3
+setuptools==70.2.0
+sqlparse==0.5.0
+urllib3==2.2.2
+Werkzeug==3.0.3
+wheel==0.43.0
