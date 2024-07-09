@@ -16,16 +16,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          node-version: '20'  # Specify Node.js version 20
 
       - name: Set up Python version
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
+          node-version: '20'  # Specify Node.js version 20
           
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '20'  # Specify Node.js version 20
 
       - name: Create and start virtual environment
         run: |
@@ -38,6 +41,10 @@ jobs:
           pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          pytest
 
       - name: Zip artifact for deployment
         run: |
@@ -56,7 +63,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write  # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
